@@ -70,7 +70,7 @@ import Foundation
 
     client.session.configuration.urlCache?.storeCachedResponse(cachedResponse, for: request)
     
-    let result = try await client.fetchHolidays(for: Locale.LanguageCode("dk"))
+    let result = try await client.fetchHolidays(for: Locale.Region("dk"))
     
     #expect(result.code == "dk")
     #expect(result.country == "Denmark")

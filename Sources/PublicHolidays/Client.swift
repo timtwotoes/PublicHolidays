@@ -9,8 +9,8 @@ public final class Client {
         session = URLSession(configuration: .ephemeral)
     }
     
-    public func fetchHolidays(for language: Locale.LanguageCode) async throws (ClientError) -> Holidays {
-        let request = URLRequest(url: holidayURL.appending(path: language.identifier))
+    public func fetchHolidays(for region: Locale.Region) async throws (ClientError) -> Holidays {
+        let request = URLRequest(url: holidayURL.appending(path: region.identifier))
         do {
             let (data, response) = try await session.data(for: request) // Throws URLError
             
