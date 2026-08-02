@@ -23,7 +23,7 @@ public final class Client {
                 let holidays = try decoder.decode(Holidays.self, from: data) // Throws DecodingError
                 return holidays
             } else {
-                throw response // throws HTTPURLResponse
+                throw ClientError.errorFromServer(response as! HTTPURLResponse) // throws HTTPURLResponse
             }
         } catch let error as URLError {
             throw ClientError.urlLoading(error)
