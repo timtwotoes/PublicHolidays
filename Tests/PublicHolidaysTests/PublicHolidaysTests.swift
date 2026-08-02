@@ -1,5 +1,10 @@
 import Testing
 import Foundation
+
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 @testable import PublicHolidays
 
 @Test func `Successfull response from holiday API`() async throws {
