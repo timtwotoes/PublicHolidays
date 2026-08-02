@@ -27,8 +27,8 @@ public final class Client {
             }
         } catch let error as URLError {
             throw ClientError.urlLoading(error)
-        } catch let error as HTTPURLResponse {
-            throw ClientError.errorFromServer(error)
+        } catch ClientError.errorFromServer(let response) {
+            throw ClientError.errorFromServer(response)
         } catch let error as DecodingError {
             throw ClientError.parsingError(error)
         } catch let error {
