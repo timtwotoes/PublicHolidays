@@ -1,5 +1,5 @@
 # Public Holidays
-[![Build macOS 26](https://github.com/timtwotoes/PublicHolidays/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/timtwotoes/PublicHolidays/actions/workflows/build.yml)
+[![macOS 26](https://github.com/timtwotoes/PublicHolidays/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/timtwotoes/PublicHolidays/actions/workflows/build.yml)
 
 See the names and dates for public holidays for any country.
 
