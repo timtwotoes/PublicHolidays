@@ -8,9 +8,10 @@ import FoundationNetworking
 @testable import PublicHolidays
 
 @Test func `Successfull response from holiday API`() async throws {
-    let client = Client()
-    client.session.configuration.requestCachePolicy = .returnCacheDataDontLoad
-    let url = URL(string: "https://caldays.com/api/holidays/dk")!
+    let configuration = URLSessionConfiguration.ephemeral
+    configuration.requestCachePolicy = .returnCacheDataDontLoad
+    let client = Client(configuration)
+    let url = URL(string: "https://caldays.com/api/holidays/DK")!
     let request = URLRequest(url: url)
     let response = HTTPURLResponse(url: url,
                                    statusCode: 200,

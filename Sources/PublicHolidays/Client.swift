@@ -9,8 +9,13 @@ public final class Client {
     
     private let holidayURL = URL(string: "https://caldays.com/api/holidays/")!
     
-    public init() {
-        session = URLSession(configuration: .ephemeral)
+    public convenience init() {
+        let configuration = URLSessionConfiguration.ephemeral
+        self.init(configuration)
+    }
+    
+    internal init(_ configuration: URLSessionConfiguration) {
+        self.session = URLSession(configuration: configuration)
     }
     
     public func fetchHolidays(for region: Locale.Region) async throws (ClientError) -> Holidays {
