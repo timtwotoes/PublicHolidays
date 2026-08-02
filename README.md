@@ -1,7 +1,7 @@
 # Public Holidays
 See the names and dates for public holidays for any country.
 
-This is a trivial package, meant to explore DocC, GitHub pages and actions.
+This is a trivial package meant to explore DocC, GitHub pages and actions.
 
 ## References
 - [caldays](https://caldays.com/api)  
