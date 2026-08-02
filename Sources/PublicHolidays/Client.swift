@@ -32,7 +32,7 @@ public final class Client {
         } catch let error as DecodingError {
             throw ClientError.parsingError(error)
         } catch let error {
-            fatalError(error.localizedDescription) // Programmer error if we encounter this
+            fatalError("Received unexpected error of type \(String(describing: error.self))") // Programmer error if we encounter this
         }
     }
 }
