@@ -26,7 +26,7 @@ public final class Client {
         } catch let error as HTTPURLResponse {
             throw ClientError.errorFromServer(error)
         } catch let error as DecodingError {
-            throw ClientError.decodingResponse(error)
+            throw ClientError.parsingError(error)
         } catch let error {
             fatalError(error.localizedDescription) // Programmer error if we encounter this
         }
@@ -37,6 +37,6 @@ extension Client {
     public enum ClientError: Error {
         case errorFromServer(HTTPURLResponse)
         case urlLoading(URLError)
-        case decodingResponse(DecodingError)
+        case parsingError(DecodingError)
     }
 }
