@@ -8,3 +8,4 @@ This is a trivial package meant to explore DocC, GitHub pages and actions.
 ## References
 - [caldays](https://caldays.com/api)  
 - [Publish DocC to GitHub Pages via Actions](https://www.kodeco.com/40047657-docc-tutorial-for-swift-automating-publishing-with-github-actions)
+- [Swift DocC Plugin documentation](https://swiftlang.github.io/swift-docc-plugin/documentation/swiftdoccplugin/)
