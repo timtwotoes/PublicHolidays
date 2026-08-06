@@ -4,6 +4,7 @@ import Foundation
 import FoundationNetworking
 #endif
 
+/// Client to access caldays API for holidays.
 public final class Client {
     internal let session: URLSession
     
@@ -18,6 +19,9 @@ public final class Client {
         self.session = URLSession(configuration: configuration)
     }
     
+    /// Fetch holidays for a region
+    /// - Parameter region: A region identifier defined in the BCP 47 iso standard or a predefined constant from Locale.Region.
+    /// - Returns: Holidays for the given region.
     public func fetchHolidays(for region: Locale.Region) async throws (ClientError) -> Holidays {
         let request = URLRequest(url: holidayURL.appending(path: region.identifier))
         do {
@@ -43,9 +47,13 @@ public final class Client {
 }
 
 extension Client {
+    /// Errors thrown by
     public enum ClientError: Error {
+        /// Received a status code other than 2xx.
         case errorFromServer(HTTPURLResponse)
+        /// Network error - no internet access and such.
         case urlLoading(URLError)
+        /// Could not parse result received from caldays.
         case parsingError(DecodingError)
     }
 }
