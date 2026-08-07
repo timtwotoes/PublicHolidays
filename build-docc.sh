@@ -1,5 +1,7 @@
 ##!/bin/sh
 
+swift --version
+
 swift package --allow-writing-to-directory "./docs" \
    generate-documentation --target PublicHolidays \
    --disable-indexing \
