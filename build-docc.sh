@@ -7,4 +7,6 @@ swift package --allow-writing-to-directory "./docs" \
    --hosting-base-path "PublicHolidays" \
    --output-path "./docs"
 
+find docs -type f | wc -l
+
 echo '<script>window.location.href += "/documentation/publicholidays"</script>' > docs/index.html
