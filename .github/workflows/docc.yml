@@ -35,7 +35,7 @@ jobs:
       - name: Generate DocC static site
         run: ./build-docc.sh
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v3
       - name: Upload documentation
         uses: actions/upload-pages-artifact@v3
         with:
